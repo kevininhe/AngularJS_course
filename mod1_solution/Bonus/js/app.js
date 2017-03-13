@@ -7,8 +7,7 @@
   function LunchCheckController($scope) {
     $scope.input_text = "";
     $scope.result = "";
-    //Controls the color of the text displayed
-    //in the div
+    //Controls the style of some elements
     $scope.styleManager = {};
 
     $scope.implementErrorStyle = function () {
