@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      .footerText {
+        color: #adad85;
+        font-size: 0.9em;
+      }
     </style>
   </head>
 <body>
@@ -15,12 +19,14 @@
          <div class="form-group">
              <input id="lunch-menu" type="text" ng-model="input_text"
              placeholder="List comma separated dishes you usually have for lunch"
-             class="form-control">
+             class="form-control" ng-style="styleManager.border">
+             <span class="footerText">Please note an empty item, i.e, ", ," is not
+               being considered as an item towards the count</span>
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="checkIfMuch()">Check If Too Much</button>
          </div>
-         <div class="form-group message">
+         <div class="form-group message" ng-style="styleManager.color">
            {{result}}
          </div>
    </div>
