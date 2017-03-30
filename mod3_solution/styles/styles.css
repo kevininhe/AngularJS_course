@@ -1,0 +1,23 @@
+h1 {
+  margin-bottom: 30px;
+}
+#foundItems {
+  clear: both;
+  float: left;
+}
+.error {
+  color: #0080ff;
+  font-weight: bold;
+  display: none;
+}
+.table {
+  display: none;
+}
+input[type="text"] {
+  width: 200px;
+  float: left;
+}
+.narrow-button {
+  float: left;
+  margin-left: 10px;
+}
