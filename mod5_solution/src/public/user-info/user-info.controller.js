@@ -8,6 +8,5 @@
   function UserInfoController(userInfo) {
     var userInfoCtrl = this;
     userInfoCtrl.userInfo = userInfo;
-    console.log("The information of the user is: ", userInfo);
   }
 })();
