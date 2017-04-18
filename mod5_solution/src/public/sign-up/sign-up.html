@@ -1,0 +1,66 @@
+<div class="container">
+  <legend>Subscribe to our newsletter and stay updated!</legend>
+  <form name="signUpForm" novalidate>
+    First name:<br>
+  	<input type="text" placeholder="First name" name="firstname"
+    ng-model="signUpCtrl.user.firstName"
+    required
+    minlength="3"
+    ></input>
+    <span
+      ng-if="(signUpForm.firstname.$error.minlength || signUpForm.firstname.$error.required) && signUpForm.firstname.$touched">
+      First name must be at least 3 characters long
+    </span>
+    <br>
+
+    Last name:<br>
+    <input type="text" placeholder="Last Name" name="lastname"
+    ng-model="signUpCtrl.user.lastname"
+    required
+    minlength="3"
+    ></input>
+    <span
+      ng-if="(signUpForm.lastname.$error.minlength || signUpForm.lastname.$error.required) && signUpForm.lastname.$touched">
+      Last Name must be at least 3 characters long
+    </span>
+    <br>
+
+    E-mail Address:<br>
+    <input type="email" placeholder="Email address" name="email"
+    ng-model="signUpCtrl.user.email"
+    required
+    ></input>
+    <span ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+      Must be a valid email address: name@domain format
+    </span>
+    <br>
+
+    Phone number:<br>
+    <input type="text" name="phone" placeholder="Phone ###-###-##-##"
+    ng-model="signUpCtrl.user.phone"
+    pattern="(\d{3})-(\d{3})-(\d{2})-(\d{2})"
+    ></input>
+    <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+      Phone must be in the format ###-###-##-##.
+    </span>
+    <br>
+
+    Favourite dish number:<br>
+    <input type="text" name="favdish" placeholder="Favourite dish"
+    ng-model="signUpCtrl.user.favDish"
+    required
+    ></input>
+    {{ signUpCtrl.menuItemName }}
+    <span ng-if="!signUpCtrl.menuItemFound">
+      No such number menu exists
+    </span>
+
+    <br> <br>
+    <button ng-disabled="signUpForm.$invalid" ng-click="signUpCtrl.submit()" >Submit</button>
+
+    <div class="alert alert-success alert-dismissable" ng-if="signUpCtrl.success" >
+      <a href="index.html" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Success:</strong> Your information has been saved!
+    </div>
+  </form>
+</div>
